@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot - Jovem Programador</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     
+    <img src="PJP.png" alt="Jovem Programador Logo" class="logo-bottom-left">
+    <img src="tróia.png" alt="Cavalo de Troia Logo" class="logo-bottom-right">
+
+    
+    <div class="chat-container">
+        
+        <div class="chat-header">
+            <div class="header-left">
+                <img src="PJP.png" alt="Jovem Programador" class="header-logo">
+            </div>
+            <div class="header-center">
+                <h1>💬 Chatbot Jovem Programador</h1>
+                <p>Tire suas dúvidas sobre o programa</p>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+              
+            <div class="message bot">
+                <div class="message-avatar">
+                    <div class="robot-container">
+                        <svg class="robot-body" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+                             
+                            <line x1="100" y1="20" x2="100" y2="50" stroke="#e91e8c" stroke-width="3"/>
+                            <circle cx="100" cy="15" r="5" fill="#ff0099"/>
+                            
+                              
+                            <rect x="70" y="50" width="60" height="50" rx="10" fill="#2d1b69" stroke="#e91e8c" stroke-width="2"/>
+                            
+                           
+                            <circle cx="85" cy="70" r="6" fill="#00ffff" class="robot-eye-left"/>
+                            <circle cx="115" cy="70" r="6" fill="#00ffff" class="robot-eye-right"/>
+                            
+                          
+                            <path d="M 80 85 Q 100 92 120 85" stroke="#e91e8c" stroke-width="2" fill="none" class="robot-mouth"/>
+                            
+                             
+                            <rect x="60" y="110" width="80" height="90" rx="15" fill="#2d1b69" stroke="#e91e8c" stroke-width="2"/>
+                            
+                            
+                            <rect x="80" y="130" width="40" height="30" rx="5" fill="#1a0a3e" stroke="#ff0099" stroke-width="1"/>
+                            <circle cx="90" cy="145" r="3" fill="#00ffff" class="robot-light"/>
+                            <circle cx="100" cy="145" r="3" fill="#00ffff" class="robot-light"/>
+                            <circle cx="110" cy="145" r="3" fill="#00ffff" class="robot-light"/>
+                            
+                          
+                            <rect x="35" y="120" width="20" height="60" rx="10" fill="#2d1b69" stroke="#e91e8c" stroke-width="2" class="robot-arm-left"/>
+                            <circle cx="45" cy="185" r="8" fill="#1a0a3e" stroke="#ff0099" stroke-width="2"/>
+                            
+                            <rect x="145" y="120" width="20" height="60" rx="10" fill="#2d1b69" stroke="#e91e8c" stroke-width="2" class="robot-arm-right"/>
+                            <circle cx="155" cy="185" r="8" fill="#1a0a3e" stroke="#ff0099" stroke-width="2"/>
+                            
+                            
+                            <rect x="70" y="205" width="25" height="70" rx="8" fill="#2d1b69" stroke="#e91e8c" stroke-width="2"/>
+                            <rect x="105" y="205" width="25" height="70" rx="8" fill="#2d1b69" stroke="#e91e8c" stroke-width="2"/>
+                            
+                             
+                            <ellipse cx="82.5" cy="280" rx="18" ry="8" fill="#1a0a3e" stroke="#ff0099" stroke-width="2"/>
+                            <ellipse cx="117.5" cy="280" rx="18" ry="8" fill="#1a0a3e" stroke="#ff0099" stroke-width="2"/>
+                        </svg>
+                        
+                         
+                        <div class="robot-thinking" id="robotThinking">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="45" fill="white" stroke="#e91e8c" stroke-width="3"/>
+                                <text x="50" y="70" font-size="60" fill="#2d1b69" text-anchor="middle" font-weight="bold">?</text>
+                            </svg>
+                        </div>
+                        
+                         
+                        <div class="robot-idea" id="robotIdea">
+                            <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <radialGradient id="bulbGlow">
+                                        <stop offset="0%" style="stop-color:#ffff00;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#ff9900;stop-opacity:0.5" />
+                                    </radialGradient>
+                                </defs>
+                                
+                                <circle cx="50" cy="40" r="25" fill="url(#bulbGlow)" stroke="#ff9900" stroke-width="2" class="lightbulb-glow"/>
+                                
+                                <rect x="42" y="60" width="16" height="8" fill="#666"/>
+                                <rect x="40" y="68" width="20" height="4" fill="#888"/>
+                                  
+                                <line x1="50" y1="10" x2="50" y2="0" stroke="#ffff00" stroke-width="3" class="light-ray"/>
+                                <line x1="75" y1="20" x2="82" y2="13" stroke="#ffff00" stroke-width="3" class="light-ray"/>
+                                <line x1="80" y1="40" x2="90" y2="40" stroke="#ffff00" stroke-width="3" class="light-ray"/>
+                                <line x1="25" y1="20" x2="18" y2="13" stroke="#ffff00" stroke-width="3" class="light-ray"/>
+                                <line x1="20" y1="40" x2="10" y2="40" stroke="#ffff00" stroke-width="3" class="light-ray"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="message-content">
+                    Olá! Sou o assistente virtual do Jovem Programador. Como posso ajudar você hoje?
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input-container">
+            <input 
+                type="text" 
+                class="chat-input" 
+                id="userInput" 
+                placeholder="Digite sua mensagem..."
+                autocomplete="off"
+            >
+            <button class="send-button" id="sendButton">Enviar</button>
+        </div>
+    </div>
+
+        <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>
+                <strong>Desenvolvido por:</strong> Cleiton - Lucas - Jackson - Gustavo  
+                <strong>Programa:</strong> Jovem Programador — 
+                <strong>Faculdade de Tecnologia Senac</strong>
+                <p>&copy; <span id="year"></span> Jovem Programador — Faculdade Senac</p>
+            </p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
